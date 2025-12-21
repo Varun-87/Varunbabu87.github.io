@@ -14,12 +14,12 @@
   </div>
 
   <div class="profile-right">
-    <h1>Varun Babu B</h1>
-    <p>MBA | BE (CSE) | HR • Business Analytics • AI Enthusiast</p>
+    <h1>VARUN BABU B</h1>
+    <p>MBA [HR • Business Analytics] | B.E-CSE | AI Enthusiast</p>
 
     <div class="header-actions">
       <a href="Varun_Babu_B_Resume.pdf" class="btn" download>
-        Download Resume
+        Open Resume
       </a>
 
       <div class="social-icons">
@@ -33,11 +33,13 @@
     </div>
   </div>
 </header>
+
 <!-- Image Modal -->
 <div id="imageModal" class="image-modal" onclick="closeImage()">
-  <span class="close-btn">&times;</span>
-  <img src="profile.jpg" class="modal-img">
+  <span class="close-btn" onclick="closeImage()">&times;</span>
+  <img src="profile.jpg" class="modal-img" onclick="event.stopPropagation()">
 </div>
+
 
 <!-- ABOUT ME -->
 <section>
@@ -184,6 +186,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
