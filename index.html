@@ -9,131 +9,110 @@
 </head>
 <body>
 
-<nav>
-    <div class="logo">VB</div>
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#explore">Explore</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<header class="hero" id="home">
-    <div class="hero-container">
-        <div class="profile-left">
-            <div class="img-frame" onclick="openImage()">
-                <img src="profile.jpg" alt="Varun Babu B">
-            </div>
-        </div>
-        <div class="profile-right">
+<section class="hero-split">
+    <div class="hero-left">
+        <div class="profile-box">
+            <img src="profile.jpg" alt="Varun Babu B" class="profile-img">
             <h1>Varun Babu B</h1>
-            <p class="tagline">MBA | BE (CSE) | HR • Business Analytics • AI Enthusiast</p>
-            <div class="header-actions">
-                <a href="Varun_Babu_B_Resume.pdf" class="btn primary" download>Download Resume</a>
-                <a href="#contact" class="btn secondary">Hire Me</a>
+            <p class="tagline">MBA | BE (CSE)</p>
+            <p class="sub-tagline">HR • Business Analytics • AI Enthusiast</p>
+            <div class="hero-btns">
+                <a href="Varun_Babu_B_Resume.pdf" class="btn yellow" download>Download Resume</a>
+                <div class="mini-socials">
+                    <a href="https://www.linkedin.com/in/varun8702"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Varun-87"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
     </div>
-</header>
 
-<section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-card">
-        <p>
-            I am a results-oriented professional with a unique blend of technical and management education. 
-            Holding a Bachelor’s in Computer Science and an MBA in HR & Business Analytics, I bridge the gap 
-            between data-driven insights and people-focused solutions.
-        </p>
+    <div class="hero-right">
+        <div class="about-container">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a results-oriented professional with a unique blend of technical and management education. 
+                With a Bachelor’s in Computer Science and an MBA in HR & Business Analytics, I bridge the gap 
+                between data-driven insights and people-focused solutions. I enjoy combining analytical 
+                thinking with human-centric strategies.
+            </p>
+        </div>
     </div>
 </section>
 
 <section id="explore" class="section">
-    <h2 class="section-title">Explore My Work</h2>
-    <div class="expand-grid">
-        
-        <div class="expand-card" onclick="toggleCard(this)">
-            <div class="card-header">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Education</h3>
-                <span class="plus">+</span>
-            </div>
-            <div class="card-content">
-                <p><strong>MBA in HR & Business Analytics</strong><br>Details about your university and CGPA.</p>
-                <hr>
-                <p><strong>BE in Computer Science Engineering</strong><br>Details about your technical foundation.</p>
-            </div>
+    <h2 class="section-title text-center">Explore</h2>
+    <div class="card-grid">
+        <div class="card" onclick="openModal('edu-modal')">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Education</h3>
         </div>
-
-        <div class="expand-card" onclick="toggleCard(this)">
-            <div class="card-header">
-                <i class="fas fa-briefcase"></i>
-                <h3>Experience</h3>
-                <span class="plus">+</span>
-            </div>
-            <div class="card-content">
-                <p><strong>HR Operations Intern</strong><br>Specific company name and duration.</p>
-                <ul>
-                    <li>Handled recruitment pipeline for 20+ roles.</li>
-                    <li>Managed employee records and performance tracking.</li>
-                </ul>
-            </div>
+        <div class="card" onclick="openModal('exp-modal')">
+            <i class="fas fa-briefcase"></i>
+            <h3>Experience</h3>
         </div>
-
-        <div class="expand-card" onclick="toggleCard(this)">
-            <div class="card-header">
-                <i class="fas fa-tools"></i>
-                <h3>Skills</h3>
-                <span class="plus">+</span>
-            </div>
-            <div class="card-content">
-                <div class="skill-sub-grid">
-                    <div class="skill-box">
-                        <h4>HR Skills</h4>
-                        <p>Recruitment, Talent Acquisition, Operations.</p>
-                    </div>
-                    <div class="skill-box">
-                        <h4>Soft Skills</h4>
-                        <p>Stakeholder Management, Communication.</p>
-                    </div>
-                    <div class="skill-box">
-                        <h4>Analytical Skills</h4>
-                        <p>SQL, Python, Excel, Data Visualization.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="card" onclick="openModal('project-modal')">
+            <i class="fas fa-code"></i>
+            <h3>Projects</h3>
         </div>
-
-        <div class="expand-card" onclick="toggleCard(this)">
-            <div class="card-header">
-                <i class="fas fa-certificate"></i>
-                <h3>Certifications</h3>
-                <span class="plus">+</span>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>Google Business Analytics Professional</li>
-                    <li>Advanced HR Management Certificate</li>
-                </ul>
-            </div>
+        <div class="card" onclick="openModal('skills-modal')">
+            <i class="fas fa-tools"></i>
+            <h3>Skills</h3>
         </div>
-
     </div>
 </section>
 
+<div id="modal-overlay" class="modal-overlay" onclick="closeAllModals()">
+    <div id="edu-modal" class="modal-content" onclick="event.stopPropagation()">
+        <h2>Education</h2>
+        <div class="detail-item">
+            <h4>MBA (HR & Business Analytics)</h4>
+            <p>University Name | Year</p>
+        </div>
+        <div class="detail-item">
+            <h4>BE (Computer Science)</h4>
+            <p>University Name | Year</p>
+        </div>
+    </div>
+
+    <div id="exp-modal" class="modal-content" onclick="event.stopPropagation()">
+        <h2>Experience</h2>
+        <div class="detail-item">
+            <h4>HR Operations Intern</h4>
+            <p>Company Name | Duration</p>
+            <ul>
+                <li>Recruitment support and interview coordination.</li>
+                <li>Performance data analysis.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project-modal" class="modal-content" onclick="event.stopPropagation()">
+        <h2>Projects</h2>
+        <div class="detail-item">
+            <h4>HR Dashboard Design</h4>
+            <p>Created a Python/Tableau dashboard for turnover analysis.</p>
+        </div>
+    </div>
+
+    <div id="skills-modal" class="modal-content" onclick="event.stopPropagation()">
+        <h2>Skills</h2>
+        <div class="skills-flex">
+            <div><h3>HR</h3><p>Recruitment, Operations</p></div>
+            <div><h3>Soft</h3><p>Communication, Leadership</p></div>
+            <div><h3>Tech</h3><p>Python, SQL, Excel</p></div>
+        </div>
+    </div>
+</div>
+
 <footer id="contact">
     <h2>Let’s Collaborate</h2>
-    <p>Open for opportunities in HR Tech & Business Analytics</p>
     <div class="social-icons">
         <a href="https://www.linkedin.com/in/varun8702" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Varun-87" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-    <p class="footer-note">© 2025 Varun Babu B | Built with Passion</p>
+    <p class="footer-note">© 2025 Varun Babu B</p>
 </footer>
-
-<div id="imageModal" class="modal" onclick="closeImage()">
-    <img src="profile.jpg" alt="Varun Babu B Large">
-</div>
 
 <script src="script.js"></script>
 </body>
