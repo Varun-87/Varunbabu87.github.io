@@ -148,10 +148,20 @@ body {
   color: #000;
 }
 
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
 .social {
   color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
+  font-size: 22px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social:hover {
+  transform: translateY(-3px);
+  color: #00bfff; /* sky blue hover */
 }
 
 /* =========================================================
@@ -358,6 +368,7 @@ body {
     height: 160px;
   }
 }
+
 
 
 
