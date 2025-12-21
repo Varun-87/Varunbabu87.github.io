@@ -1,38 +1,29 @@
-// Function to handle the Expanding Cards
-function toggleCard(card) {
-    // Close other cards (optional, comment out if you want multiple open)
-    const allCards = document.querySelectorAll('.expand-card');
-    allCards.forEach(c => {
-        if (c !== card) c.classList.remove('active');
-    });
-
-    // Toggle current card
-    card.classList.toggle('active');
+// Function to open specific modal
+function openModal(modalId) {
+    const overlay = document.getElementById('modal-overlay');
+    const allContents = document.querySelectorAll('.modal-content');
     
-    // Change plus to minus icon effect
-    const plus = card.querySelector('.plus');
-    if (card.classList.contains('active')) {
-        plus.textContent = '-';
-    } else {
-        plus.textContent = '+';
-    }
+    // Hide all modal contents first
+    allContents.forEach(content => content.style.display = 'none');
+    
+    // Show overlay and the specific content
+    overlay.style.display = 'flex';
+    document.getElementById(modalId).style.display = 'block';
+    
+    // Prevent scrolling on background
+    document.body.style.overflow = 'hidden';
 }
 
-// Profile Image Modal Logic
-function openImage() {
-    document.getElementById("imageModal").style.display = "flex";
+// Function to close modal when clicking background
+function closeAllModals() {
+    const overlay = document.getElementById('modal-overlay');
+    overlay.style.display = 'none';
+    
+    // Re-enable scrolling
+    document.body.style.overflow = 'auto';
 }
 
-function closeImage() {
-    document.getElementById("imageModal").style.display = "none";
-}
-
-// Smooth scrolling for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Close modal on Escape key
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeAllModals();
 });
