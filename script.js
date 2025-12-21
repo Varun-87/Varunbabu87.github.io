@@ -10,25 +10,7 @@ function openImageModal(src){
 }
 
 /* Close modal (overlay) */
-function closeModal(){
-  const overlay = document.getElementById('modalOverlay');
-  overlay.style.display = 'none';
-  const content = document.getElementById('modalContent');
-  content.innerHTML = '';
-}
-
-/* Clicking the overlay (outside modal-card) closes it: handled by markup (onclick on overlay) */
-document.getElementById('modalOverlay').addEventListener('click', closeModal);
-
-/* Prevent overlay click when clicking inside modal card (already handled inline using event.stopPropagation())
-   but add a listener to modal card in case of different browsers */
-document.getElementById('modalCard').addEventListener('click', function(e){ e.stopPropagation(); });
-
-
-/* ================= DYNAMIC CARD MODAL LOGIC ================= */
-/* The HTML includes a hidden container (#cardDetails) with detail blocks.
-   When a front card is clicked we find the matching detail block and copy it into the modal.
-   This keeps content in HTML for easy editing later. */
+/* ================= MODAL OPEN / CLOSE ================= */
 
 function openCardModal(cardId){
   const overlay = document.getElementById('modalOverlay');
@@ -36,23 +18,43 @@ function openCardModal(cardId){
   const detailsRoot = document.getElementById('cardDetails');
   const detailBlocks = detailsRoot.querySelectorAll('.detail-block');
 
-  // find the matching detail block by data-id
   let block = null;
   detailBlocks.forEach(b => {
     if(b.getAttribute('data-id') === cardId) block = b;
   });
 
-  if(!block){
-    content.innerHTML = '<h3>Coming soon</h3><p class="muted">Content will be added here later.</p>';
-  } else {
-    // clone the block into modal
-    content.innerHTML = block.innerHTML;
-  }
+  content.innerHTML = block
+    ? block.innerHTML
+    : '<h3>Coming Soon</h3><p class="muted">Content will be added later.</p>';
 
-  overlay.style.display = 'flex';
+  overlay.classList.add('active');
 }
+
+/* Image modal reuse */
+function openImageModal(src){
+  const overlay = document.getElementById('modalOverlay');
+  const content = document.getElementById('modalContent');
+  content.innerHTML = `
+    <div style="text-align:center;">
+      <img src="${src}" style="max-width:85%;border-radius:12px;">
+    </div>`;
+  overlay.classList.add('active');
+}
+
+function closeModal(){
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.remove('active');
+}
+
+/* ESC key support */
+document.addEventListener('keydown', function(e){
+  if(e.key === "Escape"){
+    closeModal();
+  }
+});
 
 /* Attach helper functions on window so inline onclick in HTML finds them */
 window.openCardModal = openCardModal;
 window.openImageModal = openImageModal;
 window.closeModal = closeModal;
+
