@@ -101,17 +101,22 @@ h4{font-size:16px;margin:0 0 6px;color:var(--text)}
 .muted{color:var(--muted);font-size:13px}
 
 /* ================= MODAL (centered) ================= */
-.modal-overlay{
-  position:fixed;inset:0;display:none;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.6);z-index:9999;padding:20px;
-}
 .modal-card{
-  width:min(1000px,96%);max-height:90vh;overflow:auto;background:linear-gradient(180deg,#071018,#09131a);
-  border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(0,0,0,0.7);position:relative;
+  width:min(1000px,96%);
+  max-height:90vh;
+  overflow:auto;
+  background:linear-gradient(180deg,#071018,#09131a);
+  border-radius:14px;
+  padding:22px;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow:0 30px 80px rgba(0,0,0,0.7);
+  transform:scale(0.92);
+  transition:transform 0.3s ease;
 }
-.modal-close{position:absolute;right:14px;top:10px;background:transparent;border:0;color:var(--muted);font-size:22px;cursor:pointer}
-.modal-content{color:var(--muted)}
-.modal-content h3{color:var(--text)}
+
+.modal-overlay.active .modal-card{
+  transform:scale(1);
+}
 
 /* ================= FOOTER ================= */
 .footer{padding:40px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.02);margin-top:30px}
@@ -127,3 +132,4 @@ h4{font-size:16px;margin:0 0 6px;color:var(--text)}
   .card-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
   .modal-card{padding:16px}
 }
+
