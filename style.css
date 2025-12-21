@@ -148,27 +148,46 @@ body {
   color: #000;
 }
 
+/* === SOCIAL ICON CONTAINER === */
 .social-icons {
   display: flex;
-  gap: 22px;
+  align-items: center;
+  gap: 18px;              /* Space between icons */
+  margin-top: 14px;
 }
 
+/* === ICON BASE STYLE === */
 .social {
-  font-size: 30px;
-  width: 48px;
-  height: 48px;
+  width: 46px;            /* Size similar to LinkedIn */
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--accent);
-  background: rgba(255, 212, 0, 0.08);
-  transition: transform 0.25s ease, background 0.25s ease;
+  font-size: 22px;        /* Icon size */
+  background: #1a1a1a;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
+/* === BRAND COLORS === */
+.social.linkedin {
+  color: #0A66C2;
+}
+
+.social.github {
+  color: #ffffff;
+}
+
+.social.instagram {
+  color: #E4405F;
+}
+
+/* === HOVER EFFECT === */
 .social:hover {
-  background: rgba(0, 191, 255, 0.18);
-  transform: translateY(-4px) scale(1.05);
+  transform: translateY(-4px) scale(1.08);
+  background: #222;
 }
 
 
@@ -376,6 +395,7 @@ body {
     height: 160px;
   }
 }
+
 
 
 
