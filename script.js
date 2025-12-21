@@ -1,47 +1,36 @@
-/* =========================================================
-   PORTFOLIO MODAL & INTERACTION SCRIPT
-   Author: Varun Babu B
-   Purpose: Clean center-expand cards + image modal
-========================================================= */
+/* =================================================
+   MODAL CONTENT HANDLER — FINAL FIXED VERSION
+================================================== */
 
-/* ---------- ELEMENT REFERENCES ---------- */
 const modalOverlay = document.getElementById("modalOverlay");
 const modalContent = document.getElementById("modalContent");
-const cardDetailsRoot = document.getElementById("cardDetails");
+const cardDetails = document.getElementById("cardDetails");
 
 /* ---------- OPEN CARD MODAL ---------- */
 function openCardModal(cardId) {
-  // Find matching hidden content block
-  const detailBlock = cardDetailsRoot.querySelector(
+  // find matching detail block
+  const detail = cardDetails.querySelector(
     `[data-id="${cardId}"]`
   );
 
-  // Load content or fallback
-  if (detailBlock) {
-    modalContent.innerHTML = detailBlock.innerHTML;
+  // safety fallback
+  if (!detail) {
+    modalContent.innerHTML = "<p>Content not found.</p>";
   } else {
-    modalContent.innerHTML = `
-      <h3>Coming Soon</h3>
-      <p class="muted">Content will be added here later.</p>
-    `;
+    modalContent.innerHTML = detail.innerHTML;
   }
 
-  // Show modal
   modalOverlay.classList.add("active");
 }
 
-/* ---------- OPEN PROFILE IMAGE MODAL ---------- */
-function openImageModal(imageSrc) {
+/* ---------- OPEN PROFILE IMAGE ---------- */
+function openImageModal(src) {
   modalContent.innerHTML = `
-    <div style="text-align:center;">
-      <img 
-        src="${imageSrc}" 
-        alt="Profile Image" 
-        style="max-width:85%; border-radius:14px; box-shadow:0 20px 60px rgba(0,0,0,0.8);"
-      >
-    </div>
+    <img src="${src}" style="
+      max-width: 100%;
+      border-radius: 16px;
+    ">
   `;
-
   modalOverlay.classList.add("active");
 }
 
@@ -49,28 +38,13 @@ function openImageModal(imageSrc) {
 function closeModal() {
   modalOverlay.classList.remove("active");
 
-  // Clear content after animation
+  // clean content after close animation
   setTimeout(() => {
     modalContent.innerHTML = "";
-  }, 300);
+  }, 200);
 }
 
 /* ---------- ESC KEY SUPPORT ---------- */
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
 });
-
-/* ---------- PREVENT MODAL CLOSE WHEN CLICKING INSIDE ---------- */
-document.getElementById("modalCard").addEventListener("click", function (e) {
-  e.stopPropagation();
-});
-
-/* ---------- BACKGROUND CLICK CLOSE ---------- */
-modalOverlay.addEventListener("click", closeModal);
-
-/* ---------- EXPOSE FUNCTIONS TO HTML ---------- */
-window.openCardModal = openCardModal;
-window.openImageModal = openImageModal;
-window.closeModal = closeModal;
