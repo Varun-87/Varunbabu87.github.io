@@ -2,193 +2,153 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Varun Babu B | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header-flex">
+<!-- ================= HEADER / HERO SECTION ================= -->
+<header class="hero">
+
+  <!-- ===== PROFILE IMAGE (LEFT SIDE) ===== -->
   <div class="profile-left">
-    <img src="profile.jpg" alt="Varun Babu B" class="profile-pic" onclick="openImage()">
+    <img src="profile.jpg" alt="Varun Babu B" onclick="openImage()">
   </div>
 
+  <!-- ===== BASIC INFO + ACTION BUTTONS ===== -->
   <div class="profile-right">
-    <h1>VARUN BABU B</h1>
-    <p>MBA [HR • Business Analytics] | B.E-CSE | AI Enthusiast</p>
+    <h1>Varun Babu B</h1>
+    <p class="tagline">
+      MBA | BE (CSE) | HR • Business Analytics • AI Enthusiast
+    </p>
 
     <div class="header-actions">
       <a href="Varun_Babu_B_Resume.pdf" class="btn" download>
-        Open Resume
+        Download Resume
       </a>
 
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/varun8702" target="_blank">
-          LinkedIn
-        </a>
-        <a href="https://github.com/Varun-87" target="_blank">
-          GitHub
-        </a>
+        <a href="https://www.linkedin.com/in/varun8702" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Varun-87" target="_blank">GitHub</a>
+        <a href="https://instagram.com/" target="_blank">Instagram</a>
       </div>
     </div>
   </div>
+
 </header>
 
-<!-- Image Modal -->
+<!-- ================= IMAGE MODAL (FULL VIEW) ================= -->
 <div id="imageModal" class="image-modal" onclick="closeImage()">
-  <span class="close-btn" onclick="closeImage()">&times;</span>
-  <img src="profile.jpg" class="modal-img" onclick="event.stopPropagation()">
+  <span class="close-btn">&times;</span>
+  <img src="profile.jpg" class="modal-img">
 </div>
 
-
-<!-- ABOUT ME -->
+<!-- ================= ABOUT ME SECTION ================= -->
 <section>
   <h2>About Me</h2>
   <div class="card static-card">
     <p>
-      I am a results-oriented professional with a unique blend of technical and
-      management education, holding a Bachelor’s degree in Computer Science Engineering
-      and an MBA in Human Resources and Business Analytics.
-    </p>
-    <p>
-      I have hands-on experience in HR operations, recruitment support, and performance
-      analysis, along with strong analytical skills in Excel, SQL, and Python.
-      I enjoy combining data-driven thinking with people-focused solutions and
-      am eager to grow in HR and business analytics roles.
+      I am a results-oriented professional with a unique blend of technical and management education,
+      holding a Bachelor’s degree in Computer Science Engineering and an MBA in Human Resources and Business Analytics.
+      I have hands-on experience in HR operations, recruitment support, and performance analysis,
+      along with strong analytical skills in Excel, SQL, and Python.
+      I enjoy combining data-driven thinking with people-focused solutions and am eager to grow
+      in HR and business analytics roles.
     </p>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- ================= FRONT PAGE CARDS ================= -->
 <section>
-  <h2>Certifications</h2>
+  <h2>Explore</h2>
 
-  <div class="card" onclick="toggleCard(this)">
-    <h3>Talent Acquisition Certification</h3>
-    <p class="issuer">Reliance Foundation</p>
-    <div class="details">
-      <p>Issued: September 2025</p>
-      <p>Credential ID: RFSA000283680</p>
-    </div>
-  </div>
-
-  <div class="card" onclick="toggleCard(this)">
-    <h3>TCS iON Career Edge – Young Professional</h3>
-    <p class="issuer">Tata Consultancy Services</p>
-    <div class="details">
-      <p>Issued: August 2024</p>
-      <p>Credential ID: 119854-26596313-1016</p>
-    </div>
-  </div>
-
-  <div class="card" onclick="toggleCard(this)">
-    <h3>Career Essentials in Business Analysis</h3>
-    <p class="issuer">Microsoft & LinkedIn</p>
-    <div class="details">
-      <p>Issued: April 2025</p>
-      <p>Credential ID: 932b155ad9a55436f49af53f48082e84c63be763afac9d6dbd86c5e966b44d39</p>
-    </div>
-  </div>
-
-  <div class="card" onclick="toggleCard(this)">
-    <h3>Career Essentials in Generative AI</h3>
-    <p class="issuer">LinkedIn</p>
-    <div class="details">
-      <p>Issued: August 2024</p>
-    </div>
-  </div>
-
-  <div class="card" onclick="toggleCard(this)">
-    <h3>Google Analytics Individual Qualification</h3>
-    <p class="issuer">Coursera</p>
-    <div class="details">
-      <p>Issued: October 2022</p>
-    </div>
+  <div class="card-grid">
+    <div class="card clickable">Certifications</div>
+    <div class="card clickable">Projects</div>
+    <div class="card clickable">Skills</div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ================= SKILLS SECTION ================= -->
 <section>
   <h2>Skills</h2>
 
-  <div class="card" onclick="toggleCard(this)">
-    <h3>HR Skills</h3>
-    <div class="details">
-      <p>
-        1.Talent Acquisition - Full-Cycle Recruiting
-        2.Strategic Sourcing & ATS
-        3.Audit & Compliance
-        4.HRIS Management
-        5.Onboarding/Offboarding
-        6.Policy Development
-        7.Compensation,Equity & Incentive Planning
-        8.Attrition & Retention Analysis
-      </p>
-    </div>
-  </div>
+  <div class="card-grid">
 
-   <div class="card" onclick="toggleCard(this)">
-    <h3>Soft Skills</h3>
-    <div class="details">
-      <p>
-        1.Communication skills
-        2.Administrative expertise
-        3.HR reporting skills
-        4.Advising & Coaching
-        5.Cultural awareness and sensitivity
-        6.Active listening
-        7.Teamwork
-      </p>
+    <!-- ===== HR SKILLS CARD ===== -->
+    <div class="card">
+      <h3>HR Skills</h3>
+      <ul>
+        <li>Recruitment Support</li>
+        <li>HR Operations</li>
+        <li>Performance Management</li>
+        <li>Talent Acquisition</li>
+      </ul>
     </div>
-  </div>
-  
-  <div class="card" onclick="toggleCard(this)">
-    <h3>Analytical & Technical Skills</h3>
-    <div class="details">
-      <p>
-        1.Excel
-        2.SQL 
-        3.Python pandas
-        4.Power BI / Tableau
-        5.Web Analytics
-        6.Data Analysis
-        7.AI Tools
-      </p>
+
+    <!-- ===== SOFT SKILLS CARD ===== -->
+    <div class="card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Stakeholder Coordination</li>
+        <li>Problem Solving</li>
+        <li>Time Management</li>
+      </ul>
     </div>
+
+    <!-- ===== ANALYTICAL SKILLS CARD ===== -->
+    <div class="card">
+      <h3>Analytical Skills</h3>
+      <ul>
+        <li>Excel (Advanced)</li>
+        <li>SQL</li>
+        <li>Python</li>
+        <li>Data Analysis</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ================= EXPERIENCE SECTION ================= -->
 <section>
-  <h2>Projects</h2>
+  <h2>Experience</h2>
 
-  <div class="card" onclick="toggleCard(this)">
-    <h3>HR Performance & Compensation Analysis</h3>
-    <div class="details">
-      <p>
-        *Gained practical exposure to HR operations, company policies, and administrative functions within a large-scale public sector organization.
-        *Assisted in executive record and service book maintenance, ensuring accuracy and compliance with internal standards 
-        and also in payroll processing, learning about salary structure, allowances, and deductions in a government enterprise setup.
-        *Studied the disciplinary action process, including procedures for inquiry, documentation, and compliance with organizational conduct rules.
-        *Observed the contract labour management system, including hiring procedures, wage calculation, and statutory compliance.
-        *Collaborated with HR professionals in daily operations, improving communication, coordination, and documentation skills.
-      </p>
-    </div>
+  <div class="card">
+    <h3>HR Operations & Recruitment Support</h3>
+    <p>
+      Hands-on experience supporting recruitment processes, coordinating interviews,
+      maintaining HR records, and assisting in performance analysis and reporting.
+    </p>
   </div>
 </section>
 
+<!-- ================= FOOTER / LET'S COLLABORATE ================= -->
 <footer>
-  <p>Mail: varunabimanyu002@gmail.com
-    Mobile: 9159432937
+  <h2>Let’s Collaborate</h2>
+
+  <div class="footer-icons">
+    <a href="https://www.linkedin.com/in/varun8702" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Varun-87" target="_blank">GitHub</a>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
+  </div>
+
+  <p class="footer-note">
+    © 2025 Varun Babu B
   </p>
 </footer>
 
-<script src="script.js"></script>
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  function openImage() {
+    document.getElementById("imageModal").style.display = "flex";
+  }
+
+  function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
