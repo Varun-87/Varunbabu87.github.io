@@ -51,16 +51,45 @@ body {
   width: 220px;
   height: 220px;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 50%;              /* make image round */
   cursor: pointer;
   border: 3px solid rgba(255, 212, 0, 0.25);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
   transition: transform 0.25s ease;
+  position: relative;              /* REQUIRED for ring */
+  z-index: 1;
 }
 
 .profile-pic:hover {
   transform: translateY(-6px);
 }
+/* ===== Animated Sky-Blue Ring ===== */
+.profile-pic::after {
+  content: "";
+  position: absolute;
+  inset: -8px;                     /* distance from image */
+  border-radius: 50%;
+  border: 2px solid rgba(0, 191, 255, 0.7); /* sky blue */
+  animation: pulseRing 2.8s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* ===== Ring Animation ===== */
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
 
 .hero-right h1 {
   font-size: 36px;
@@ -307,3 +336,4 @@ body {
     height: 160px;
   }
 }
+
