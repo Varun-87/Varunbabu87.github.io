@@ -353,6 +353,10 @@ body {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
 }
 
+.hidden {
+  display: none !important;
+}
+v
 /* Hide detailed sections initially */
 .cert-section {
   display: none;
@@ -495,6 +499,7 @@ body {
     height: 160px;
   }
 }
+
 
 
 
