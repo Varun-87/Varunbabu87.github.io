@@ -91,26 +91,79 @@
 
     <div class="card-grid">
 
-      <!-- ================= CERTIFICATIONS MODAL ================= -->
-    <div class="modal-card-content">
-    
-      <h3>Certifications</h3>
-    
-      <!-- LEVEL 1: CATEGORY SELECTION -->
-      <div class="inner-grid category-grid">
-        <div class="mini-card category-card" onclick="openCert('hr')">
-          <h4>HR Certifications</h4>
-          <p class="muted">Recruitment, HR Analytics, Compensation</p>
-        </div>
-    
-        <div class="mini-card category-card" onclick="openCert('tech')">
-          <h4>Technical Certifications</h4>
-          <p class="muted">AI, Data, Programming</p>
-        </div>
+      <!-- ================= CERTIFICATIONS MODAL CONTENT ================= -->
+<div class="modal-card-content">
+
+  <h3>Certifications</h3>
+
+  <!-- ================= LEVEL 1: CATEGORY SELECTION ================= -->
+  <div class="inner-grid category-grid">
+    <div class="mini-card category-card" onclick="openCert('hr')">
+      <h4>HR Certifications</h4>
+      <p class="muted">Recruitment, HR Analytics, Compensation</p>
+    </div>
+
+    <div class="mini-card category-card" onclick="openCert('tech')">
+      <h4>Technical Certifications</h4>
+      <p class="muted">AI, Data, Programming</p>
+    </div>
+  </div>
+
+  <!-- ================= LEVEL 2: HR CERTIFICATIONS ================= -->
+  <div class="cert-section" id="cert-hr">
+    <h4>HR Certifications</h4>
+
+    <div class="inner-grid">
+
+      <div class="mini-card">
+        <h5>GE Aerospace – Explore Human Resources</h5>
+        <p class="muted">HR tools, feedback, Lean methodology</p>
       </div>
-    
+
+      <div class="mini-card">
+        <h5>Talent Acquisition Certification</h5>
+        <p><strong>Issuer:</strong> Reliance Foundation</p>
+        <p><strong>Issued:</strong> Sep 2025</p>
+        <p><strong>Credential ID:</strong> RFSA000283680</p>
+      </div>
+
+      <div class="mini-card">
+        <h5>TCS iON Career Edge – Young Professional</h5>
+        <p><strong>Issuer:</strong> Tata Consultancy Services</p>
+        <p><strong>Issued:</strong> Aug 2024</p>
+        <p><strong>Credential ID:</strong> 119854-26596313-1016</p>
+      </div>
+
     </div>
+  </div>
+
+  <!-- ================= LEVEL 2: TECH CERTIFICATIONS ================= -->
+  <div class="cert-section" id="cert-tech">
+    <h4>Technical Certifications</h4>
+
+    <div class="inner-grid">
+
+      <div class="mini-card">
+        <h5>AI for Business Analytics</h5>
+        <p class="muted">Data-driven decision making</p>
+      </div>
+
+      <div class="mini-card">
+        <h5>Career Essentials in Business Analysis</h5>
+        <p><strong>Issuer:</strong> Microsoft & LinkedIn</p>
+        <p><strong>Issued:</strong> Apr 2025</p>
+      </div>
+
+      <div class="mini-card">
+        <h5>Google Analytics Individual Qualification</h5>
+        <p><strong>Issuer:</strong> Coursera</p>
+        <p><strong>Issued:</strong> Oct 2022</p>
+      </div>
+
     </div>
+  </div>
+
+</div>
 
 
       <!-- CARD: Projects -->
@@ -139,56 +192,6 @@
     </div>
   </section>
 
-
-  <!-- ================= CARD DETAILS (hidden, used by modal) ================= -->
-    <!-- LEVEL 2: HR CERT DETAILS -->
-  <div class="cert-section" id="cert-hr">
-    <h4>HR Certifications</h4>
-
-    <div class="inner-grid">
-      <div class="mini-card">
-        <h5>GE Aerospace – Explore Human Resources</h5>
-        <p class="muted">HR tools, feedback, Lean methodology</p>
-      </div>
-    </div>
-     <div class="mini-card">
-          <h4>Talent Acquisition Certification</h4>
-          <p><strong>Issuer:</strong> Reliance Foundation</p>
-          <p><strong>Issued:</strong> Sep 2025</p>
-          <p><strong>Credential ID:</strong> RFSA000283680</p>
-          <!-- add a link or PDF later -->
-          <p class="muted">[link / PDF can be added later]</p>
-        </div>
-            <div class="mini-card">
-          <h4>TCS iON Career Edge - Young Professional</h4>
-          <p><strong>Issuer:</strong> Tata Consultancy Services</p>
-          <p><strong>Issued:</strong> Aug 2024</p>
-          <p><strong>Credential ID:</strong> 119854-26596313-1016</p>
-        </div>
-      </div>
-
-  <!-- LEVEL 2: TECH CERT DETAILS -->
-  <div class="cert-section" id="cert-tech">
-    <h4>Technical Certifications</h4>
-
-    <div class="inner-grid">
-    <div class="mini-card">
-        <h5>AI for Business Analytics</h5>
-        <p class="muted">Data-driven decision making</p>
-      </div>
-      <div class="mini-card">
-          <h4>Career Essentials - Business Analysis</h4>
-          <p><strong>Issuer:</strong> Microsoft / LinkedIn</p>
-          <p><strong>Issued:</strong> Apr 2025</p>
-      </div>
-          <div class="mini-card">
-          <h4>Google Analytics Individual Qualification</h4>
-          <p><strong>Issuer:</strong> Coursera</p>
-          <p><strong>Issued:</strong> Oct 2022</p>
-        </div>
-      </div>
-    </div>
-  
 
     <!-- Projects details -->
     <div data-id="projects" class="detail-block">
@@ -379,6 +382,7 @@
 
 </body>
 </html>
+
 
 
 
