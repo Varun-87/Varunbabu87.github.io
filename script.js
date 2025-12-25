@@ -1,32 +1,39 @@
 /* =================================================
-   MODAL CONTENT HANDLER — FINAL FIXED VERSION
+   MODAL & CERTIFICATION HANDLER — CLEAN VERSION
 ================================================== */
-/* ================= MODAL OPEN ================= */
+
+const modalOverlay = document.getElementById("modalOverlay");
+const modalContent = document.getElementById("modalContent");
+const cardDetails = document.getElementById("cardDetails");
+
+/* ================= OPEN CARD MODAL ================= */
 function openCardModal(cardId) {
-  const overlay = document.getElementById("modalOverlay");
-  const modalContent = document.getElementById("modalContent");
+  const source = cardDetails.querySelector(`[data-id="${cardId}"]`);
 
-  const source = document.querySelector(
-    `#cardDetails [data-id="${cardId}"]`
-  );
+  if (!source) {
+    modalContent.innerHTML = "<p>Content not found.</p>";
+  } else {
+    modalContent.innerHTML = source.innerHTML;
+  }
 
-  if (!source) return;
+  modalOverlay.classList.add("active");
 
-  modalContent.innerHTML = source.innerHTML;
-  overlay.classList.add("active");
-
-  // Reset certification view every time modal opens
+  // reset certifications view every time modal opens
   resetCertView();
 }
 
-/* ================= MODAL CLOSE ================= */
+/* ================= CLOSE MODAL ================= */
 function closeModal() {
-  document.getElementById("modalOverlay").classList.remove("active");
+  modalOverlay.classList.remove("active");
+
+  setTimeout(() => {
+    modalContent.innerHTML = "";
+  }, 200);
 }
 
-/* ================= CERT CATEGORY LOGIC ================= */
+/* ================= CERTIFICATION LOGIC ================= */
 
-/* OPEN HR or TECH */
+/* OPEN HR OR TECH */
 function openCert(type) {
   const categories = document.getElementById("certCategories");
   const hr = document.getElementById("cert-hr");
@@ -34,14 +41,11 @@ function openCert(type) {
 
   if (!categories || !hr || !tech) return;
 
-  // Hide category cards
   categories.classList.add("hidden");
 
-  // Hide both sections first
   hr.classList.remove("active");
   tech.classList.remove("active");
 
-  // Show selected section
   if (type === "hr") {
     hr.classList.add("active");
   } else if (type === "tech") {
@@ -62,7 +66,7 @@ function backToCertCategories() {
   tech.classList.remove("active");
 }
 
-/* RESET WHEN MODAL OPENS */
+/* RESET CERT VIEW */
 function resetCertView() {
   const categories = document.getElementById("certCategories");
   const hr = document.getElementById("cert-hr");
@@ -75,54 +79,20 @@ function resetCertView() {
   tech.classList.remove("active");
 }
 
-/* ESC KEY CLOSE */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
-
-
-const modalOverlay = document.getElementById("modalOverlay");
-const modalContent = document.getElementById("modalContent");
-const cardDetails = document.getElementById("cardDetails");
-
-/* ---------- OPEN CARD MODAL ---------- */
-function openCardModal(cardId) {
-  // find matching detail block
-  const detail = cardDetails.querySelector(
-    `[data-id="${cardId}"]`
-  );
-
-  // safety fallback
-  if (!detail) {
-    modalContent.innerHTML = "<p>Content not found.</p>";
-  } else {
-    modalContent.innerHTML = detail.innerHTML;
-  }
-
-  modalOverlay.classList.add("active");
-}
-
-/* ---------- OPEN PROFILE IMAGE ---------- */
+/* ================= IMAGE MODAL ================= */
 function openImageModal(src) {
   modalContent.innerHTML = `
-    <img src="${src}" style="
-      max-width: 100%;
-      border-radius: 16px;
-    ">
+    <img src="${src}" style="max-width:100%; border-radius:16px;">
   `;
   modalOverlay.classList.add("active");
 }
 
-/* ---------- CLOSE MODAL ---------- */
-function closeModal() {
-  modalOverlay.classList.remove("active");
+/* ================= ESC KEY SUPPORT ================= */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
 
-  // clean content after close animation
-  setTimeout(() => {
-    modalContent.innerHTML = "";
-  }, 200);
-}
-// ===================== RESUME DROPDOWN LOGIC =====================
+/* ================= RESUME DROPDOWN ================= */
 
 const resumeBtn = document.getElementById("resumeBtn");
 const resumeMenu = document.getElementById("resumeMenu");
@@ -132,23 +102,10 @@ resumeBtn.addEventListener("click", (e) => {
   resumeMenu.classList.toggle("show");
 });
 
-// Close dropdown when clicking outside
 document.addEventListener("click", () => {
   resumeMenu.classList.remove("show");
 });
 
-// Prevent closing when clicking inside menu
 resumeMenu.addEventListener("click", (e) => {
   e.stopPropagation();
 });
-
-
-/* ---------- ESC KEY SUPPORT ---------- */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
-
-
-
-
-
