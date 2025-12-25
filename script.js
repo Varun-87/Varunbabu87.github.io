@@ -1,5 +1,5 @@
 /* =================================================
-   MODAL & CERTIFICATION HANDLER — CLEAN VERSION
+   MODAL & CERTIFICATION HANDLER — FIXED
 ================================================== */
 
 const modalOverlay = document.getElementById("modalOverlay");
@@ -8,17 +8,16 @@ const cardDetails = document.getElementById("cardDetails");
 
 /* ================= OPEN CARD MODAL ================= */
 function openCardModal(cardId) {
+  if (!modalOverlay || !modalContent || !cardDetails) return;
+
   const source = cardDetails.querySelector(`[data-id="${cardId}"]`);
 
-  if (!source) {
-    modalContent.innerHTML = "<p>Content not found.</p>";
-  } else {
-    modalContent.innerHTML = source.innerHTML;
-  }
+  modalContent.innerHTML = source
+    ? source.innerHTML
+    : "<p>Content not found.</p>";
 
   modalOverlay.classList.add("active");
 
-  // reset certifications view every time modal opens
   resetCertView();
 }
 
@@ -31,9 +30,7 @@ function closeModal() {
   }, 200);
 }
 
-/* ================= CERTIFICATION LOGIC ================= */
-
-/* OPEN HR OR TECH */
+/* ================= CERT SWITCH ================= */
 function openCert(type) {
   const categories = document.getElementById("certCategories");
   const hr = document.getElementById("cert-hr");
@@ -41,19 +38,21 @@ function openCert(type) {
 
   if (!categories || !hr || !tech) return;
 
+  // always reset first
   categories.classList.add("hidden");
-
   hr.classList.remove("active");
   tech.classList.remove("active");
 
   if (type === "hr") {
     hr.classList.add("active");
-  } else if (type === "tech") {
+  }
+
+  if (type === "tech") {
     tech.classList.add("active");
   }
 }
 
-/* BACK BUTTON */
+/* ================= BACK ================= */
 function backToCertCategories() {
   const categories = document.getElementById("certCategories");
   const hr = document.getElementById("cert-hr");
@@ -66,7 +65,7 @@ function backToCertCategories() {
   tech.classList.remove("active");
 }
 
-/* RESET CERT VIEW */
+/* ================= RESET ================= */
 function resetCertView() {
   const categories = document.getElementById("certCategories");
   const hr = document.getElementById("cert-hr");
@@ -87,30 +86,26 @@ function openImageModal(src) {
   modalOverlay.classList.add("active");
 }
 
-/* ================= ESC KEY SUPPORT ================= */
+/* ================= ESC ================= */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
 
 /* ================= RESUME DROPDOWN ================= */
-
 const resumeBtn = document.getElementById("resumeBtn");
 const resumeMenu = document.getElementById("resumeMenu");
 
-resumeBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  resumeMenu.classList.toggle("show");
-});
+if (resumeBtn && resumeMenu) {
+  resumeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resumeMenu.classList.toggle("show");
+  });
 
-document.addEventListener("click", () => {
-  resumeMenu.classList.remove("show");
-});
+  document.addEventListener("click", () => {
+    resumeMenu.classList.remove("show");
+  });
 
-resumeMenu.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
-// ===== CERTIFICATION CATEGORY SWITCH FIX =====
-const categoryCards = document.querySelectorAll(".category-card");
-const certSections = document.querySelectorAll(".cert
-
+  resumeMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+}
