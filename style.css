@@ -335,6 +335,30 @@ body {
   color: var(--accent);
   border: 1px solid var(--accent);
 }
+/* ================= CATEGORY LEVEL ================= */
+
+.category-card {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Hide detailed sections initially */
+.cert-section {
+  display: none;
+  margin-top: 24px;
+}
+
+/* Active section */
+.cert-section.active {
+  display: block;
+}
+
 
 /* =========================================================
    MODAL (THE FIX)
@@ -433,6 +457,7 @@ body {
     height: 160px;
   }
 }
+
 
 
 
