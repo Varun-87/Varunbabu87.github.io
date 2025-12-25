@@ -87,111 +87,79 @@
   <!-- ================= EXPLORE CARDS (front page) ================= -->
   <!-- === UPDATE: Titles here; content for each card is placed in card-detail sections below === -->
   <section id="explore" class="section container">
-    <h2 class="section-title">Explore</h2>
+  <h2 class="section-title">Explore</h2>
 
-    <div class="card-grid">
+  <div class="card-grid">
+    <div class="front-card" onclick="openCardModal('certifications')">
+      <div class="front-card-title">Certifications</div>
+    </div>
 
-      <!-- ================= CERTIFICATIONS MODAL CONTENT ================= -->
-<div class="modal-card-content">
+    <div class="front-card" onclick="openCardModal('projects')">
+      <div class="front-card-title">Projects</div>
+    </div>
 
-  <h3>Certifications</h3>
+    <div class="front-card" onclick="openCardModal('education')">
+      <div class="front-card-title">Education</div>
+    </div>
 
-  <!-- ================= LEVEL 1: CATEGORY SELECTION ================= -->
-  <div class="inner-grid category-grid">
-    <div class="mini-card category-card" onclick="openCert('hr')">
+    <div class="front-card" onclick="openCardModal('experience')">
+      <div class="front-card-title">Experience</div>
+    </div>
+
+    <div class="front-card" onclick="openCardModal('skills')">
+      <div class="front-card-title">Skills</div>
+    </div>
+  </div>
+</section>
+
+    <!-- ================= CARD DETAILS (HIDDEN SOURCE) ================= -->
+<div id="cardDetails" style="display:none;">
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <div data-id="certifications">
+
+    <h3>Certifications</h3>
+
+    <!-- CATEGORY LEVEL -->
+    <div class="inner-grid category-grid">
+      <div class="mini-card category-card" onclick="openCert('hr')">
+        <h4>HR Certifications</h4>
+        <p class="muted">Recruitment, HR Analytics</p>
+      </div>
+
+      <div class="mini-card category-card" onclick="openCert('tech')">
+        <h4>Technical Certifications</h4>
+        <p class="muted">AI, Data, Analytics</p>
+      </div>
+    </div>
+
+    <!-- HR CERTS -->
+    <div class="cert-section" id="cert-hr">
       <h4>HR Certifications</h4>
-      <p class="muted">Recruitment, HR Analytics, Compensation</p>
+      <div class="inner-grid">
+        <div class="mini-card">
+          <h5>GE Aerospace – Explore HR</h5>
+          <p class="muted">HR tools, Lean methodology</p>
+        </div>
+        <div class="mini-card">
+          <h5>Talent Acquisition</h5>
+          <p>Reliance Foundation | Sep 2025</p>
+        </div>
+      </div>
     </div>
 
-    <div class="mini-card category-card" onclick="openCert('tech')">
+    <!-- TECH CERTS -->
+    <div class="cert-section" id="cert-tech">
       <h4>Technical Certifications</h4>
-      <p class="muted">AI, Data, Programming</p>
+      <div class="inner-grid">
+        <div class="mini-card">
+          <h5>Career Essentials – Business Analysis</h5>
+          <p>Microsoft | Apr 2025</p>
+        </div>
+      </div>
     </div>
+
   </div>
-
-  <!-- ================= LEVEL 2: HR CERTIFICATIONS ================= -->
-  <div class="cert-section" id="cert-hr">
-    <h4>HR Certifications</h4>
-
-    <div class="inner-grid">
-
-      <div class="mini-card">
-        <h5>GE Aerospace – Explore Human Resources</h5>
-        <p class="muted">HR tools, feedback, Lean methodology</p>
-      </div>
-
-      <div class="mini-card">
-        <h5>Talent Acquisition Certification</h5>
-        <p><strong>Issuer:</strong> Reliance Foundation</p>
-        <p><strong>Issued:</strong> Sep 2025</p>
-        <p><strong>Credential ID:</strong> RFSA000283680</p>
-      </div>
-
-      <div class="mini-card">
-        <h5>TCS iON Career Edge – Young Professional</h5>
-        <p><strong>Issuer:</strong> Tata Consultancy Services</p>
-        <p><strong>Issued:</strong> Aug 2024</p>
-        <p><strong>Credential ID:</strong> 119854-26596313-1016</p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ================= LEVEL 2: TECH CERTIFICATIONS ================= -->
-  <div class="cert-section" id="cert-tech">
-    <h4>Technical Certifications</h4>
-
-    <div class="inner-grid">
-
-      <div class="mini-card">
-        <h5>AI for Business Analytics</h5>
-        <p class="muted">Data-driven decision making</p>
-      </div>
-
-      <div class="mini-card">
-        <h5>Career Essentials in Business Analysis</h5>
-        <p><strong>Issuer:</strong> Microsoft & LinkedIn</p>
-        <p><strong>Issued:</strong> Apr 2025</p>
-      </div>
-
-      <div class="mini-card">
-        <h5>Google Analytics Individual Qualification</h5>
-        <p><strong>Issuer:</strong> Coursera</p>
-        <p><strong>Issued:</strong> Oct 2022</p>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-
-      <!-- CARD: Projects -->
-      <div class="front-card" data-card="projects" onclick="openCardModal('projects')">
-        <div class="front-card-title">Projects</div>
-      </div>
-
-      <!-- CARD: Education -->
-      <div class="front-card" data-card="education" onclick="openCardModal('education')">
-        <div class="front-card-title">Education</div>
-      </div>
-
-      <!-- CARD: Experience (intern) -->
-      <div class="front-card" data-card="experience" onclick="openCardModal('experience')">
-        <div class="front-card-title">Experience</div>
-      </div>
-
-      <!-- CARD: Skills (inside modal will show 3 skill cards) -->
-      <div class="front-card" data-card="skills" onclick="openCardModal('skills')">
-        <div class="front-card-title">Skills</div>
-      </div>
-      <!-- CARD: Achievements -->
-      <div class="front-card" data-card="achievements" onclick="openCardModal('achievements')">
-        <div class="front-card-title">Achievements</div>
-      </div>
-    </div>
-  </section>
-
 
     <!-- Projects details -->
     <div data-id="projects" class="detail-block">
@@ -382,6 +350,7 @@
 
 </body>
 </html>
+
 
 
 
