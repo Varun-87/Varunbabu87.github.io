@@ -118,48 +118,83 @@
   <!-- ================= CERTIFICATIONS ================= -->
   <div data-id="certifications">
 
-    <h3>Certifications</h3>
+  <h3>Certifications</h3>
 
-    <!-- CATEGORY LEVEL -->
-    <div class="inner-grid category-grid">
-      <div class="mini-card category-card" onclick="openCert('hr')">
-        <h4>HR Certifications</h4>
-        <p class="muted">Recruitment, HR Analytics</p>
-      </div>
-
-      <div class="mini-card category-card" onclick="openCert('tech')">
-        <h4>Technical Certifications</h4>
-        <p class="muted">AI, Data, Analytics</p>
-      </div>
-    </div>
-
-    <!-- HR CERTS -->
-    <div class="cert-section" id="cert-hr">
+  <!-- CATEGORY SELECTION -->
+  <div class="inner-grid category-grid" id="certCategories">
+    <div class="mini-card category-card" onclick="openCert('hr')">
       <h4>HR Certifications</h4>
-      <div class="inner-grid">
-        <div class="mini-card">
-          <h5>GE Aerospace – Explore HR</h5>
-          <p class="muted">HR tools, Lean methodology</p>
-        </div>
-        <div class="mini-card">
-          <h5>Talent Acquisition</h5>
-          <p>Reliance Foundation | Sep 2025</p>
-        </div>
-      </div>
+      <p class="muted">Recruitment, HR Analytics</p>
     </div>
 
-    <!-- TECH CERTS -->
-    <div class="cert-section" id="cert-tech">
+    <div class="mini-card category-card" onclick="openCert('tech')">
       <h4>Technical Certifications</h4>
-      <div class="inner-grid">
-        <div class="mini-card">
-          <h5>Career Essentials – Business Analysis</h5>
-          <p>Microsoft | Apr 2025</p>
-        </div>
+      <p class="muted">AI, Data, Analytics</p>
+    </div>
+  </div>
+
+  <!-- HR CERTS -->
+  <div class="cert-section" id="cert-hr">
+    <button class="back-btn" onclick="backToCertCategories()">← Back</button>
+
+    <h4>HR Certifications</h4>
+    <div class="inner-grid">
+      <div class="mini-card">
+        <h5>GE Aerospace – Explore HR</h5>
+        <p><strong>Issuer:</strong> Forage</p>
+        <p><strong>Skills:</strong> HR,Feedback,Lean Methodology</p>
+      </div>
+      <div class="mini-card">
+        <h5>Talent Acquisition Certification</h5>
+        <p><strong>Issuer:</strong> Reliance Foundation</p>
+        <p><strong>Skills:</strong> Onboarding,HR Operations</p>
+        <p><strong>Credential ID:</strong> RFSA000283680</p>
+      </div>
+      <div class="mini-card">
+        <h5>Maestro Recruiter</h5>
+        <p><strong>Issuer:</strong> Naukri</p>
+        <p><strong>Skills:</strong> ATS,Screening,Tracking</p>
+      </div>
+      <div class="mini-card">
+        <h5>HR Certificates</h5>
+        <p><strong>Issuer:</strong> Great Learning</p>
+        <p><strong>Skills:</strong> HR managements</p>
       </div>
     </div>
-
   </div>
+
+  <!-- TECH CERTS -->
+  <div class="cert-section" id="cert-tech">
+    <button class="back-btn" onclick="backToCertCategories()">← Back</button>
+
+    <h4>Technical Certifications</h4>
+    <div class="inner-grid">
+      <div class="mini-card">
+        <h5>Career Essentials in Business Analysis</h5>
+        <p><strong>Issuer:</strong> Microsoft & LinkedIn</p>
+        <p><strong>Skills:</strong> Power BI,Python,Sql</p>
+        <p><strong>Issued:</strong> Apr 2025</p>
+      </div>
+      <div class="mini-card">
+        <h5>Digital Skills: Web Analytics</h5>
+        <p><strong>Issuer:</strong> Accenture</p>
+        <p><strong>Skills:</strong> Google and Adobe Analytics</p>
+      </div>
+      <div class="mini-card">
+        <h5>Oracle Certified Professional</h5>
+        <p><strong>Issuer:</strong> Oracle</p>
+        <p><strong>Skill:</strong> Building and deploying LLM application</p>
+      </div>
+      <div class="mini-card">
+        <h5>Google Analytics Individual Qualification</h5>
+        <p><strong>Issuer:</strong> Coursera</p>
+        <p><strong>Skill:</strong> Google Analytics and Visualisation</p>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
 
     <!-- Projects details -->
     <div data-id="projects" class="detail-block">
@@ -174,7 +209,7 @@
     <li>Prepared HR insights to support fair compensation recommendations</li>
     </ul>
       <p class="muted">
-          Tools Used: Excel (Advanced) · SQL (Basic) · HR Analytics
+          Tools Used: Excel (Tables & Charts) · SQL (Basic) · HR Analytics
         </p>
 
       <p class="muted">
@@ -249,6 +284,14 @@
           <strong>NLC INDIA LIMITED</strong> — Intern  
           <br>FEB 2025 – APR 2025</p>
         </div>
+          <div class="mini-card">
+          <h4>Data Analytics INTERN</h4>
+          <p>Handle Data cleaining,preprocessing and transform data to its insights(EDA).</p>
+          <p>Gain Hands on experience to handle data and Visualisation.</p>
+          <p class="muted">
+          <strong>Saiket Systems</strong> — Virtual Internship 
+          <br>APR 2024 – MAY 2024</p>
+        </div>
       </div>
     </div>
 
@@ -262,11 +305,11 @@
         <div class="mini-card">
           <h4>HR Skills</h4>
           <ul>
-            <li>Talent Acquisition</li>
+            <li>Talent Acquisition & Employee relations </li>
             <li>Sourcing and Screeing</li>
-            <li>Recruitment Support</li>
+            <li>Recruitment Support & Strategies </li>
             <li>Performance Management</li>
-            <li>Compensation Analysis</li>
+            <li>Compensation and Benefits Management </li>
           </ul>
         </div>
 
@@ -275,7 +318,7 @@
           <h4>Soft Skills</h4>
           <ul>
             <li>Communication</li>
-            <li>Stakeholder Coordination</li>
+            <li>Stakeholder Handling</li>
             <li>Teamcorrdination</li>
             <li>Problem Solving</li>
             <li>Attention to details</li>
@@ -286,11 +329,11 @@
         <div class="mini-card">
           <h4>Analytical Skills</h4>
           <ul>
-            <li>Excel </li>
-            <li>SQL </li>
-            <li>Power BI / Tableau</li>
-            <li>Google Analytics</li>
-            <li>Python pandas</li>
+            <li>Excel [Tables,Lookups)] </li>
+            <li>SQL [Queries, Data extraction)] </li>
+            <li>Power BI/Tableau [Dashboard,Reports]</li>
+            <li>Google Analytics & Basic Statistics </li>
+            <li>Python [Data Cleaning,Visualisation]</li>
           </ul>
         </div>
       </div>
@@ -350,6 +393,7 @@
 
 </body>
 </html>
+
 
 
 
