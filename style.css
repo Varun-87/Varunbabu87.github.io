@@ -336,28 +336,11 @@ body {
   border: 1px solid var(--accent);
 }
 /* ================= CATEGORY LEVEL ================= */
-
-.category-card {
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-  /* 🔥 CLICK FIX */
-  pointer-events: auto;
-  position: relative;
-  z-index: 2;
-}
-
-.category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
-}
-
 .hidden {
   display: none !important;
 }
-v
-/* Hide detailed sections initially */
+
+/* CERT SECTIONS */
 .cert-section {
   display: none;
   margin-top: 24px;
@@ -367,55 +350,31 @@ v
   display: block;
   animation: fadeIn 0.25s ease;
 }
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.back-btn {
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 12px;
+/* CATEGORY CARDS */
+.category-card {
   cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
 }
 
-
-
-/* =========================================================
-   MODAL (THE FIX)
-========================================================= */
+/* MODAL */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
-
-  /* CRITICAL FIX */
+  background: rgba(0,0,0,.75);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-
-  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .modal-overlay.active {
@@ -425,37 +384,33 @@ v
 }
 
 .modal-card {
-  background: linear-gradient(180deg, #0b0b0b, #111);
-  width: min(1000px, 96%);
+  background: #111;
+  padding: 26px;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 96%;
   max-height: 90vh;
   overflow-y: auto;
-  border-radius: 16px;
-  padding: 26px;
-  border: 1px solid var(--border);
-  box-shadow: 0 30px 90px rgba(0,0,0,0.85);
-
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-
-  /* 🔥 CRITICAL FIX */
-  pointer-events: auto;
-  position: relative;
 }
-
-
-.modal-overlay.active .modal-card {
-  transform: scale(1);
-}
-
 .modal-close {
   position: absolute;
-  right: 18px;
   top: 14px;
+  right: 18px;
   background: none;
   border: none;
   color: var(--muted);
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
+  z-index: 5;
+}
+
+.modal-close:hover {
+  color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================================
@@ -499,6 +454,7 @@ v
     height: 160px;
   }
 }
+
 
 
 
