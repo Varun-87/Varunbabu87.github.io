@@ -1,6 +1,85 @@
 /* =================================================
    MODAL CONTENT HANDLER — FINAL FIXED VERSION
 ================================================== */
+/* ================= MODAL OPEN ================= */
+function openCardModal(cardId) {
+  const overlay = document.getElementById("modalOverlay");
+  const modalContent = document.getElementById("modalContent");
+
+  const source = document.querySelector(
+    `#cardDetails [data-id="${cardId}"]`
+  );
+
+  if (!source) return;
+
+  modalContent.innerHTML = source.innerHTML;
+  overlay.classList.add("active");
+
+  // Reset certification view every time modal opens
+  resetCertView();
+}
+
+/* ================= MODAL CLOSE ================= */
+function closeModal() {
+  document.getElementById("modalOverlay").classList.remove("active");
+}
+
+/* ================= CERT CATEGORY LOGIC ================= */
+
+/* OPEN HR or TECH */
+function openCert(type) {
+  const categories = document.getElementById("certCategories");
+  const hr = document.getElementById("cert-hr");
+  const tech = document.getElementById("cert-tech");
+
+  if (!categories || !hr || !tech) return;
+
+  // Hide category cards
+  categories.classList.add("hidden");
+
+  // Hide both sections first
+  hr.classList.remove("active");
+  tech.classList.remove("active");
+
+  // Show selected section
+  if (type === "hr") {
+    hr.classList.add("active");
+  } else if (type === "tech") {
+    tech.classList.add("active");
+  }
+}
+
+/* BACK BUTTON */
+function backToCertCategories() {
+  const categories = document.getElementById("certCategories");
+  const hr = document.getElementById("cert-hr");
+  const tech = document.getElementById("cert-tech");
+
+  if (!categories || !hr || !tech) return;
+
+  categories.classList.remove("hidden");
+  hr.classList.remove("active");
+  tech.classList.remove("active");
+}
+
+/* RESET WHEN MODAL OPENS */
+function resetCertView() {
+  const categories = document.getElementById("certCategories");
+  const hr = document.getElementById("cert-hr");
+  const tech = document.getElementById("cert-tech");
+
+  if (!categories || !hr || !tech) return;
+
+  categories.classList.remove("hidden");
+  hr.classList.remove("active");
+  tech.classList.remove("active");
+}
+
+/* ESC KEY CLOSE */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
+
 
 const modalOverlay = document.getElementById("modalOverlay");
 const modalContent = document.getElementById("modalContent");
@@ -63,39 +142,12 @@ resumeMenu.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
-// ================= CERTIFICATION TOGGLE =================
-
-function openCert(type) {
-  // Hide category cards
-  const categories = document.getElementById("certCategories");
-  if (categories) categories.classList.add("hidden");
-
-  // Hide all cert sections
-  document.querySelectorAll(".cert-section").forEach(sec => {
-    sec.classList.remove("active");
-  });
-
-  // Show selected section
-  const activeSection = document.getElementById(`cert-${type}`);
-  if (activeSection) activeSection.classList.add("active");
-}
-
-function backToCertCategories() {
-  // Hide cert sections
-  document.querySelectorAll(".cert-section").forEach(sec => {
-    sec.classList.remove("active");
-  });
-
-  // Show categories again
-  const categories = document.getElementById("certCategories");
-  if (categories) categories.classList.remove("hidden");
-}
-
 
 /* ---------- ESC KEY SUPPORT ---------- */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
 
 
 
