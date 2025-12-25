@@ -72,10 +72,30 @@ function openCert(type) {
 
   document.getElementById(`cert-${type}`).classList.add("active");
 }
+function openCardModal(cardId) {
+  const overlay = document.getElementById("modalOverlay");
+  const modalContent = document.getElementById("modalContent");
+  const source = document.querySelector(`#cardDetails [data-id="${cardId}"]`);
+
+  modalContent.innerHTML = source.innerHTML;
+  overlay.classList.add("active");
+}
+
+function closeModal() {
+  document.getElementById("modalOverlay").classList.remove("active");
+}
+
+function openCert(type) {
+  document.querySelectorAll(".cert-section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(`cert-${type}`).classList.add("active");
+}
 
 /* ---------- ESC KEY SUPPORT ---------- */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
 
 
