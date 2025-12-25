@@ -63,9 +63,19 @@ resumeMenu.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
+// ================= CERTIFICATION TOGGLE =================
+
+function openCert(type) {
+  document.querySelectorAll(".cert-section").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  document.getElementById(`cert-${type}`).classList.add("active");
+}
 
 /* ---------- ESC KEY SUPPORT ---------- */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
 
