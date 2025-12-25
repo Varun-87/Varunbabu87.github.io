@@ -86,10 +86,6 @@ function openImageModal(src) {
   `;
   modalOverlay.classList.add("active");
 }
-// ===== CERTIFICATION CATEGORY SWITCH FIX =====
-const categoryCards = document.querySelectorAll(".category-card");
-const certSections = document.querySelectorAll(".cert
-
 
 /* ================= ESC KEY SUPPORT ================= */
 document.addEventListener("keydown", (e) => {
@@ -113,4 +109,8 @@ document.addEventListener("click", () => {
 resumeMenu.addEventListener("click", (e) => {
   e.stopPropagation();
 });
+
+// ===== CERTIFICATION CATEGORY SWITCH FIX =====
+const categoryCards = document.querySelectorAll(".category-card");
+const certSections = document.querySelectorAll(".cert
 
