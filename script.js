@@ -43,8 +43,29 @@ function closeModal() {
     modalContent.innerHTML = "";
   }, 200);
 }
+// ===================== RESUME DROPDOWN LOGIC =====================
+
+const resumeBtn = document.getElementById("resumeBtn");
+const resumeMenu = document.getElementById("resumeMenu");
+
+resumeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  resumeMenu.classList.toggle("show");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", () => {
+  resumeMenu.classList.remove("show");
+});
+
+// Prevent closing when clicking inside menu
+resumeMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 
 /* ---------- ESC KEY SUPPORT ---------- */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
