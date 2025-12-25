@@ -66,36 +66,37 @@ resumeMenu.addEventListener("click", (e) => {
 // ================= CERTIFICATION TOGGLE =================
 
 function openCert(type) {
-  document.querySelectorAll(".cert-section").forEach(section => {
-    section.classList.remove("active");
-  });
+  // Hide category cards
+  const categories = document.getElementById("certCategories");
+  if (categories) categories.classList.add("hidden");
 
-  document.getElementById(`cert-${type}`).classList.add("active");
-}
-function openCardModal(cardId) {
-  const overlay = document.getElementById("modalOverlay");
-  const modalContent = document.getElementById("modalContent");
-  const source = document.querySelector(`#cardDetails [data-id="${cardId}"]`);
-
-  modalContent.innerHTML = source.innerHTML;
-  overlay.classList.add("active");
-}
-
-function closeModal() {
-  document.getElementById("modalOverlay").classList.remove("active");
-}
-
-function openCert(type) {
+  // Hide all cert sections
   document.querySelectorAll(".cert-section").forEach(sec => {
     sec.classList.remove("active");
   });
-  document.getElementById(`cert-${type}`).classList.add("active");
+
+  // Show selected section
+  const activeSection = document.getElementById(`cert-${type}`);
+  if (activeSection) activeSection.classList.add("active");
 }
+
+function backToCertCategories() {
+  // Hide cert sections
+  document.querySelectorAll(".cert-section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+
+  // Show categories again
+  const categories = document.getElementById("certCategories");
+  if (categories) categories.classList.remove("hidden");
+}
+
 
 /* ---------- ESC KEY SUPPORT ---------- */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
 
 
 
