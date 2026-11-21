@@ -1,409 +1,1182 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Varun Babu B — Portfolio</title>
-  <!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- link to CSS: put style.css in same folder -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Varun Babu B. | HR & Business Analytics</title>
+
+  <meta name="description"
+    content="Varun Babu B. - MBA in HR and Business Analytics, BE Computer Science. Explore my professional portfolio, projects, experience and skills.">
+
+  <meta name="theme-color" content="#101d27">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
-  <!-- ================= HEADER / HERO ================= -->
-  <!-- === UPDATE: Profile photo and basic details here (profile.jpg & resume link) === -->
-  <header id="hero" class="hero">
-    <div class="hero-inner">
-
-      <!-- ===== LEFT: PROFILE PHOTO ===== -->
-  <div class="profile-wrap" onclick="openImageModal('profile.jpg')">
-    <img id="profileImg" src="profile.jpg" alt="Varun Babu B" class="profile-pic">
+  <!-- INTRO LOADER -->
+  <div class="preloader" id="preloader">
+    <div class="loader-content">
+      <div class="loader-logo">VB<span>.</span></div>
+      <div class="loader-line">
+        <span></span>
+      </div>
+      <p>WELCOME TO MY PORTFOLIO</p>
+    </div>
   </div>
 
-      <!-- ===== RIGHT: ABOUT + ACTIONS ===== -->
-      <div class="hero-right">
-        <h1 id="name">VARUN BABU B</h1>
-        <p class="tagline" id="tagline">MBA | BE (CSE) | HR • Business Analytics • AI Enthusiast</p>
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-        <p class="about-intro" id="aboutShort">
-          My imagination becomes the universe and the rest of the world is missing out.
-        </p>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
 
-        <div class="hero-actions">
-        <!-- ===================== RESUME DROPDOWN BUTTON ===================== -->
-        <div class="resume-wrapper">
-          <button class="btn primary" id="resumeBtn">
-            Download Resume ▾
-          </button>
-        
-          <div class="resume-menu" id="resumeMenu">
-            <a href="resumes/Varun_HR_Resume.pdf" target="_blank">HR Resume</a>
-            <a href="resumes/Varun_Business_Analytics_Resume.pdf" target="_blank">
-              Business Analytics Resume
-            </a>
-          </div>
-        </div>
+  <!-- NAVIGATION -->
+  <header class="header" id="header">
+    <nav class="navbar container">
 
-          
-        <div class="social-icons">
-            <a class="social linkedin" href="https://www.linkedin.com/in/varun8702" target="_blank" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-    
-            <a class="social github" href="https://github.com/Varun-87" target="_blank" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          
-            <a class="social instagram" href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </div>
-        </div>
+      <a href="#home" class="logo">
+        VARUN<span>.</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link nav-contact">Let's Connect ↗</a>
       </div>
 
-    </div>
+      <button class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
   </header>
 
 
-  <!-- ================= ABOUT (detailed) ================= -->
-  <!-- === UPDATE: Detailed about text here === -->
-  <section id="about" class="section container">
-    <h2 class="section-title">About Me</h2>
+  <!-- HERO SECTION -->
+  <main>
 
-    <div class="card static-card">
-      <p id="aboutLong">
-        I am a results-oriented professional with a unique blend of technical and management education,
-        holding a Bachelor’s degree in Computer Science Engineering and an MBA in Human Resources and Business Analytics.
-        I have hands-on experience in HR operations, recruitment support, and performance analysis,
-        along with strong analytical skills in Excel, SQL, and Python.
-        I enjoy combining data-driven thinking with people-focused solutions and am eager to grow
-        in HR and business analytics roles.
-      </p>
-    </div>
-  </section>
+    <section class="hero section" id="home">
 
+      <div class="hero-grid container">
 
-  <!-- ================= EXPLORE CARDS (front page) ================= -->
-  <!-- === UPDATE: Titles here; content for each card is placed in card-detail sections below === -->
-  <section id="explore" class="section container">
-  <h2 class="section-title">Explore</h2>
+        <div class="hero-content">
 
-  <div class="card-grid">
-    <div class="front-card" onclick="openCardModal('certifications')">
-      <div class="front-card-title">Certifications</div>
-    </div>
+          <div class="eyebrow reveal">
+            <span class="status-dot"></span>
+            OPEN TO PROFESSIONAL OPPORTUNITIES
+          </div>
 
-    <div class="front-card" onclick="openCardModal('projects')">
-      <div class="front-card-title">Projects</div>
-    </div>
-
-    <div class="front-card" onclick="openCardModal('education')">
-      <div class="front-card-title">Education</div>
-    </div>
-
-    <div class="front-card" onclick="openCardModal('experience')">
-      <div class="front-card-title">Experience</div>
-    </div>
-
-    <div class="front-card" onclick="openCardModal('skills')">
-      <div class="front-card-title">Skills</div>
-    </div>
-  </div>
-</section>
-
-    <!-- ================= CARD DETAILS (HIDDEN SOURCE) ================= -->
-<div id="cardDetails" style="display:none;">
-
-  <!-- ================= CERTIFICATIONS ================= -->
-  <div data-id="certifications">
-
-  <h3>Certifications</h3>
-
-  <!-- CATEGORY SELECTION -->
-  <div class="inner-grid category-grid" id="certCategories">
-    <div class="mini-card category-card" onclick="openCert('hr')">
-      <h4>HR Certifications</h4>
-      <p class="muted">Recruitment, HR Analytics</p>
-    </div>
-
-    <div class="mini-card category-card" onclick="openCert('tech')">
-      <h4>Technical Certifications</h4>
-      <p class="muted">AI, Data, Analytics</p>
-    </div>
-  </div>
-
-  <!-- HR CERTS -->
-  <div class="cert-section" id="cert-hr">
-    <button class="back-btn" onclick="backToCertCategories()">← Back</button>
-
-    <h4>HR Certifications</h4>
-    <div class="inner-grid">
-      <div class="mini-card">
-        <h5>GE Aerospace – Explore HR</h5>
-        <p><strong>Issuer:</strong> Forage</p>
-        <p><strong>Skills:</strong> HR,Feedback,Lean Methodology</p>
-      </div>
-      <div class="mini-card">
-        <h5>Talent Acquisition Certification</h5>
-        <p><strong>Issuer:</strong> Reliance Foundation</p>
-        <p><strong>Skills:</strong> Onboarding,HR Operations</p>
-        <p><strong>Credential ID:</strong> RFSA000283680</p>
-      </div>
-      <div class="mini-card">
-        <h5>Maestro Recruiter</h5>
-        <p><strong>Issuer:</strong> Naukri</p>
-        <p><strong>Skills:</strong> ATS,Screening,Tracking</p>
-      </div>
-      <div class="mini-card">
-        <h5>HR Certificates</h5>
-        <p><strong>Issuer:</strong> Great Learning</p>
-        <p><strong>Skills:</strong> HR managements</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- TECH CERTS -->
-  <div class="cert-section" id="cert-tech">
-    <button class="back-btn" onclick="backToCertCategories()">← Back</button>
-
-    <h4>Technical Certifications</h4>
-    <div class="inner-grid">
-      <div class="mini-card">
-        <h5>Career Essentials in Business Analysis</h5>
-        <p><strong>Issuer:</strong> Microsoft & LinkedIn</p>
-        <p><strong>Skills:</strong> Power BI,Python,Sql</p>
-        <p><strong>Issued:</strong> Apr 2025</p>
-      </div>
-      <div class="mini-card">
-        <h5>Digital Skills: Web Analytics</h5>
-        <p><strong>Issuer:</strong> Accenture</p>
-        <p><strong>Skills:</strong> Google and Adobe Analytics</p>
-      </div>
-      <div class="mini-card">
-        <h5>Oracle Certified Professional</h5>
-        <p><strong>Issuer:</strong> Oracle</p>
-        <p><strong>Skill:</strong> Building and deploying LLM application</p>
-      </div>
-      <div class="mini-card">
-        <h5>Google Analytics Individual Qualification</h5>
-        <p><strong>Issuer:</strong> Coursera</p>
-        <p><strong>Skill:</strong> Google Analytics and Visualisation</p>
-      </div>
-      
-    </div>
-  </div>
-
-</div>
-
-    <!-- Projects details -->
-    <div data-id="projects" class="detail-block">
-      <h3>Projects</h3>
-      <div class="inner-grid">
-        <div class="mini-card">
-          <h4>Employees Performance Management & Compensation Analysis at NLC India Limited</h4>
-           <p>Academic Final Year MBA Project focused on analyzing employee performance and compensation structures to support data-driven HR decision-making.</p>
-    <ul>
-    <li>Analyzed performance ratings, salary bands, and compa-ratios</li>
-    <li>Identified pay inequities and performance–pay alignment gaps</li>
-    <li>Prepared HR insights to support fair compensation recommendations</li>
-    </ul>
-      <p class="muted">
-          Tools Used: Excel (Tables & Charts) · SQL (Basic) · HR Analytics
-        </p>
-
-      <p class="muted">
-          Project Type: Academic | MBA Final Year
-        </p>
-                <!-- ===== Project PDF Link ===== -->
-      <!-- Put the PDF inside /projects folder in GitHub -->
-      <div class="cert-actions">
-        <a
-          href="projects/HR_Performance_Compensation_Analysis_MBA_Project.pdf"
-          target="_blank"
-          class="cert-btn"
-        >
-          View Final Report (PDF)
-        </a>
-
-        <a
-          href="projects/HR_Performance_Compensation_Analysis_MBA_Project.pdf"
-          download
-          class="cert-btn outline"
-        >
-          Download
-        </a>
-        </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Education details -->
-    <div data-id="education" class="detail-block">
-      <h3>Education</h3>
-      <div class="inner-grid">
-        <div class="mini-card">
-          <h4>MBA — Human Resources & Business Analytics[CGPA:8.03]</h4>
-          <p>Institute : JEPPIAAR ENGINEERING COLLEGE [ANNA UNIVERSITY]
-             YEAR : 2023 - 2025
+          <p class="hero-greeting reveal">
+            Hello<span class="accent">.</span>
           </p>
-        </div>
-        <div class="mini-card">
-          <h4>BE — Computer Science Engineering[CGPA:8.78]</h4>
-          <p>Institute : VELAMMAL INSTITUTE OF TECHNOLOGY [ANNA UNIVERSITY]
-             YEAR : 2019 - 2023
+
+          <h1 class="hero-title reveal">
+            I'm <span class="hero-name">Varun Babu</span>
+          </h1>
+
+          <div class="hero-role reveal">
+            <span class="role-prefix">A</span>
+            <span id="typedRole">HR Professional</span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description reveal">
+            Combining people, data and technology to create
+            meaningful business solutions.
           </p>
+
+          <div class="hero-buttons reveal">
+
+            <a href="#projects" class="btn btn-primary magnetic">
+              Explore My Work
+              <span>↗</span>
+            </a>
+
+            <a href="#resume" class="btn btn-outline magnetic">
+              My Resume
+              <span>↓</span>
+            </a>
+
+          </div>
+
+          <div class="hero-socials reveal">
+
+            <a href="https://www.linkedin.com/in/varun8702/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <a href="https://github.com/Varun-87"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+          </div>
+
         </div>
-          <div class="mini-card">
-          <h4>SCHOOL- SSLC[91%] | HSC [71%]</h4>
-          <p>Institute : JAWAHAR MATRIC HR SEC SCHOOL
-             YEAR : 2016 - 2019
-          </p>
+
+
+        <!-- HERO IMAGE -->
+        <div class="hero-visual reveal">
+
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+
+          <div class="hero-glow"></div>
+
+          <div class="hero-image-frame">
+
+            <img
+              src="images/profile.jpg"
+              alt="Varun Babu professional portrait"
+              class="hero-image"
+              id="profileImage">
+
+          </div>
+
+          <div class="floating-card card-education">
+            <span class="floating-icon">🎓</span>
+            <div>
+              <strong>MBA</strong>
+              <small>HR & Business Analytics</small>
+            </div>
+          </div>
+
+          <div class="floating-card card-analytics">
+            <span class="floating-icon">📊</span>
+            <div>
+              <strong>Data Driven</strong>
+              <small>Business Insights</small>
+            </div>
+          </div>
+
+          <span class="hero-decoration decoration-left">&lt;</span>
+          <span class="hero-decoration decoration-right">/&gt;</span>
+
         </div>
+
       </div>
-    </div>
 
 
-    <!-- Experience details (intern) -->
-    <div data-id="experience" class="detail-block">
-      <h3>Experience — Intern / Trainee</h3>
-      <div class="inner-grid">
-        <div class="mini-card">
-          <h4>HR INTERN</h4>
-          <p>Supported end-to-end recruitment, interview coordination, onboarding paperwork and HR records.</p>
-          <p class="muted">
-          <strong>Next Innovation Asia</strong> — Intern  
-          <br>SEP 2024 – NOV 2024</p>
+      <!-- SKILL TICKER -->
+      <div class="ticker">
+
+        <div class="ticker-track">
+
+          <span>HUMAN RESOURCES</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>BUSINESS ANALYTICS</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>DATA ANALYSIS</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>HR OPERATIONS</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>TECHNOLOGY</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>HUMAN RESOURCES</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>BUSINESS ANALYTICS</span>
+          <span class="ticker-dot">✦</span>
+
+          <span>DATA ANALYSIS</span>
+          <span class="ticker-dot">✦</span>
+
         </div>
-         <div class="mini-card">
-          <h4>HR Project INTERN</h4>
-          <p>Supported HR documentation, Disciplinary action, HR records, Leave and attendance records.</p>
-          <p>Gain exposure to Contract labour handling and their record and the Labour Laws.</p>
-          <p class="muted">
-          <strong>NLC INDIA LIMITED</strong> — Intern  
-          <br>FEB 2025 – APR 2025</p>
-        </div>
-          <div class="mini-card">
-          <h4>Data Analytics INTERN</h4>
-          <p>Handle Data cleaining,preprocessing and transform data to its insights(EDA).</p>
-          <p>Gain Hands on experience to handle data and Visualisation.</p>
-          <p class="muted">
-          <strong>Saiket Systems</strong> — Virtual Internship 
-          <br>APR 2024 – MAY 2024</p>
-        </div>
+
       </div>
-    </div>
+
+    </section>
 
 
-    <!-- Skills details — contains three inner skill cards -->
-    <div data-id="skills" class="detail-block">
-      <h3>Skills</h3>
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
 
-      <div class="inner-grid">
-        <!-- HR Skills -->
-        <div class="mini-card">
-          <h4>HR Skills</h4>
-          <ul>
-            <li>Talent Acquisition & Employee relations </li>
-            <li>Sourcing and Screeing</li>
-            <li>Recruitment Support & Strategies </li>
-            <li>Performance Management</li>
-            <li>Compensation and Benefits Management </li>
-          </ul>
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">01 / ABOUT ME</span>
+
+          <h2>
+            People focused.
+            <br>
+            <span class="accent">Data driven.</span>
+          </h2>
+
         </div>
 
-        <!-- Soft Skills -->
-        <div class="mini-card">
-          <h4>Soft Skills</h4>
-          <ul>
-            <li>Communication</li>
-            <li>Stakeholder Handling</li>
-            <li>Teamcorrdination</li>
-            <li>Problem Solving</li>
-            <li>Attention to details</li>
-          </ul>
+
+        <div class="about-grid">
+
+          <div class="about-intro reveal">
+
+            <p class="about-lead">
+              I believe the best business decisions happen when
+              people and data work together.
+            </p>
+
+            <p>
+              I hold an MBA in Human Resources and Business
+              Analytics along with a Bachelor's degree in
+              Computer Science Engineering.
+            </p>
+
+            <p>
+              My experience includes HR operations, recruitment
+              support, employee records, performance analysis
+              and business data interpretation.
+            </p>
+
+            <p>
+              I enjoy using analytical thinking and technology
+              to understand business challenges and support
+              practical, people-focused solutions.
+            </p>
+
+          </div>
+
+
+          <div class="about-details reveal">
+
+            <div class="detail-card">
+
+              <span class="detail-number">01</span>
+
+              <div>
+                <h3>Human Resources</h3>
+                <p>
+                  Recruitment, HR operations, employee relations
+                  and performance management.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="detail-card">
+
+              <span class="detail-number">02</span>
+
+              <div>
+                <h3>Business Analytics</h3>
+                <p>
+                  Data analysis, reporting, visualization
+                  and business insights.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="detail-card">
+
+              <span class="detail-number">03</span>
+
+              <div>
+                <h3>Technology</h3>
+                <p>
+                  Computer science foundation with practical
+                  knowledge of Python, SQL and digital tools.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- Analytical Skills -->
-        <div class="mini-card">
-          <h4>Analytical Skills</h4>
-          <ul>
-            <li>Excel [Tables,Lookups)] </li>
-            <li>SQL [Queries, Data extraction)] </li>
-            <li>Power BI/Tableau [Dashboard,Reports]</li>
-            <li>Google Analytics & Basic Statistics </li>
-            <li>Python [Data Cleaning,Visualisation]</li>
-          </ul>
-        </div>
       </div>
-    </div>
 
-    <!-- Achievements details -->
-    <div data-id="achievements" class="detail-block">
-      <h3>Achievements</h3>
-      <div class="inner-grid">
-        <div class="mini-card">
-          <h4>1st Prize – Business Model Presentation</h4>
+    </section>
+
+
+    <!-- RESUME SECTION -->
+    <section class="resume section" id="resume">
+
+      <div class="container">
+
+        <div class="resume-box reveal">
+
+          <div class="resume-content">
+
+            <span class="section-label">LET'S WORK TOGETHER</span>
+
+            <h2>
+              A little more about
+              <span class="accent">my journey.</span>
+            </h2>
+
+            <p>
+              Explore my professional background through
+              my resumes.
+            </p>
+
+          </div>
+
+
+          <div class="resume-buttons">
+
+            <a
+              href="resumes/Varun_HR_Resume.pdf"
+              target="_blank"
+              class="btn btn-primary">
+
+              HR Resume ↗
+
+            </a>
+
+            <a
+              href="resumes/Varun_Business_Analytics_Resume.pdf"
+              target="_blank"
+              class="btn btn-outline">
+
+              Business Analytics Resume ↗
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience section" id="experience">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">02 / EXPERIENCE</span>
+
+          <h2>
+            My professional
+            <span class="accent">journey.</span>
+          </h2>
+
           <p>
-            Awarded <strong>First Prize</strong> for presenting an innovative business model
-            on sustainable waste recycling titled <em>“Trash to Treasure”</em>.
+            Learning, contributing and growing through
+            practical experience.
           </p>
-          <p>
-            The presentation focused on converting waste into valuable resources through
-            environmentally responsible and economically viable recycling solutions.
-          </p>
-          <p class="muted">Team-based presentation | MBA Program</p>
+
         </div>
+
+
+        <div class="timeline">
+
+
+          <!-- CURRENT APPRENTICESHIP -->
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">
+              CURRENT
+            </div>
+
+            <div class="timeline-card">
+
+              <span class="timeline-type">
+                APPRENTICESHIP
+              </span>
+
+              <h3>Graduate Apprentice</h3>
+
+              <h4>NLC India Limited</h4>
+
+              <p>
+                Gaining practical exposure to organizational
+                operations, computer systems and workplace
+                processes within a major public sector
+                undertaking.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- NLC MBA PROJECT INTERNSHIP -->
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">
+              FEB 2025 – APR 2025
+            </div>
+
+            <div class="timeline-card">
+
+              <span class="timeline-type">
+                HR PROJECT INTERNSHIP
+              </span>
+
+              <h3>HR Project Intern</h3>
+
+              <h4>NLC India Limited</h4>
+
+              <p>
+                Supported HR documentation, employee records,
+                attendance and leave records, and gained exposure
+                to disciplinary action procedures and contract
+                labour processes.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- HR INTERNSHIP -->
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">
+              SEP 2024 – NOV 2024
+            </div>
+
+            <div class="timeline-card">
+
+              <span class="timeline-type">
+                HR INTERNSHIP
+              </span>
+
+              <h3>HR Intern</h3>
+
+              <h4>Next Innovation Asia</h4>
+
+              <p>
+                Assisted with recruitment support,
+                interview coordination, onboarding paperwork
+                and HR record maintenance.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- DATA ANALYTICS INTERNSHIP -->
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">
+              APR 2024 – MAY 2024
+            </div>
+
+            <div class="timeline-card">
+
+              <span class="timeline-type">
+                VIRTUAL INTERNSHIP
+              </span>
+
+              <h3>Data Analytics Intern</h3>
+
+              <h4>Saiket Systems</h4>
+
+              <p>
+                Worked on data cleaning, preprocessing,
+                exploratory data analysis and data
+                visualization.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-  <!-- end cardDetails container -->
 
-   
-  <!-- ================= MODAL (center expand) ================= -->
-  <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
-    <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div id="modalContent" class="modal-content">
-        <!-- dynamic content inserted here by script -->
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects section" id="projects">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">03 / SELECTED WORK</span>
+
+          <h2>
+            Projects that reflect
+            <span class="accent">my learning.</span>
+          </h2>
+
+          <p>
+            Academic work and analytical projects
+            combining business and technology.
+          </p>
+
+        </div>
+
+
+        <!-- PROJECT FILTERS -->
+        <div class="project-filters reveal">
+
+          <button class="filter-btn active"
+            data-filter="all">
+            All Projects
+          </button>
+
+          <button class="filter-btn"
+            data-filter="hr">
+            Human Resources
+          </button>
+
+          <button class="filter-btn"
+            data-filter="analytics">
+            Analytics
+          </button>
+
+          <button class="filter-btn"
+            data-filter="technology">
+            Technology
+          </button>
+
+        </div>
+
+
+        <div class="project-grid">
+
+
+          <!-- NLCIL PROJECT -->
+          <article class="project-card reveal"
+            data-category="hr analytics">
+
+            <div class="project-visual project-visual-one">
+
+              <span class="project-visual-number">01</span>
+
+              <div class="project-visual-content">
+                <span>HR ANALYTICS</span>
+                <h3>Performance<br>& Compensation</h3>
+              </div>
+
+              <span class="project-visual-icon">↗</span>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                <span>ACADEMIC MBA PROJECT</span>
+                <span>2025</span>
+              </div>
+
+              <h3>
+                Employees Performance Management
+                & Compensation Analysis
+              </h3>
+
+              <p>
+                An MBA research project at NLC India Limited
+                examining employee performance management,
+                compensation satisfaction and HR insights.
+              </p>
+
+              <div class="project-tags">
+                <span>Excel</span>
+                <span>HR Analytics</span>
+                <span>SQL</span>
+              </div>
+
+              <a
+                href="projects/HR_Performance_Compensation_Analysis_MBA_Project.pdf"
+                target="_blank"
+                class="project-link">
+
+                View Project Report
+                <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- ADDITIONAL PROJECT PLACEHOLDER -->
+          <article class="project-card reveal"
+            data-category="analytics">
+
+            <div class="project-visual project-visual-two">
+
+              <span class="project-visual-number">02</span>
+
+              <div class="project-visual-content">
+                <span>DATA ANALYTICS</span>
+                <h3>Data<br>Insights</h3>
+              </div>
+
+              <span class="project-visual-icon">↗</span>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                <span>ANALYTICS PROJECT</span>
+                <span>DATA</span>
+              </div>
+
+              <h3>Exploratory Data Analysis</h3>
+
+              <p>
+                Data cleaning, analysis and visualization
+                to identify trends and generate
+                meaningful insights.
+              </p>
+
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Visualization</span>
+              </div>
+
+              <a
+                href="https://github.com/Varun-87"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link">
+
+                Explore GitHub
+                <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- TECHNOLOGY PROJECT -->
+          <article class="project-card reveal"
+            data-category="technology">
+
+            <div class="project-visual project-visual-three">
+
+              <span class="project-visual-number">03</span>
+
+              <div class="project-visual-content">
+                <span>TECHNOLOGY</span>
+                <h3>Web &<br>Programming</h3>
+              </div>
+
+              <span class="project-visual-icon">↗</span>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                <span>TECHNICAL WORK</span>
+                <span>CSE</span>
+              </div>
+
+              <h3>Computer Science Projects</h3>
+
+              <p>
+                Explore my technical learning,
+                programming practice and projects
+                through my GitHub profile.
+              </p>
+
+              <div class="project-tags">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>GitHub</span>
+              </div>
+
+              <a
+                href="https://github.com/Varun-87"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link">
+
+                View GitHub
+                <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-    </div>
-  </div>
+
+    </section>
 
 
-  <!-- ================= LET'S COLLABORATE / FOOTER ================= -->
-  <!-- === UPDATE: social links below (LinkedIn/GitHub/Instagram) === -->
-  <footer id="collab" class="footer">
-    <h2>Let's Collaborate</h2>
-      <h4>Mail : varunabimanyu002@gmail.com</h4>
-      <h4>Mobile: 9159432937</h4>
-    <div class="footer-icons">
-      <a href="https://www.linkedin.com/in/varun8702" target="_blank" rel="noopener" class="ficon">LinkedIn</a>
-      <a href="https://github.com/Varun-87" target="_blank" rel="noopener" class="ficon">GitHub</a>
-      <a href="https://instagram.com/varun_abimanyu_45" target="_blank" rel="noopener" class="ficon">Instagram</a>
-    </div>
+    <!-- EDUCATION SECTION -->
+    <section class="education section" id="education">
 
-    <p class="muted footer-copy">© 2026 Varun Babu B</p>
-  </footer>
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">04 / EDUCATION</span>
+
+          <h2>
+            My academic
+            <span class="accent">foundation.</span>
+          </h2>
+
+        </div>
 
 
-  <!-- ================= SCRIPTS: put script.js in same folder or use inline block below ================= -->
-  <script src="script.js"></script>
+        <div class="education-grid">
+
+
+          <article class="education-card reveal">
+
+            <span class="education-year">2023 – 2025</span>
+
+            <span class="education-degree">MBA</span>
+
+            <h3>
+              Human Resources &<br>
+              Business Analytics
+            </h3>
+
+            <p>
+              Jeppiaar Engineering College
+            </p>
+
+            <span class="education-university">
+              Anna University
+            </span>
+
+            <div class="education-score">
+              <span>CGPA</span>
+              <strong>8.03</strong>
+            </div>
+
+          </article>
+
+
+          <article class="education-card reveal">
+
+            <span class="education-year">2019 – 2023</span>
+
+            <span class="education-degree">B.E.</span>
+
+            <h3>
+              Computer Science<br>
+              Engineering
+            </h3>
+
+            <p>
+              Velammal Institute of Technology
+            </p>
+
+            <span class="education-university">
+              Anna University
+            </span>
+
+            <div class="education-score">
+              <span>CGPA</span>
+              <strong>8.78</strong>
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+    <section class="skills section" id="skills">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">05 / SKILLS</span>
+
+          <h2>
+            What I bring
+            <span class="accent">to the table.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-card-header">
+              <span class="skill-icon">01</span>
+              <h3>Human Resources</h3>
+            </div>
+
+            <div class="skill-list">
+              <span>Talent Acquisition</span>
+              <span>Recruitment Support</span>
+              <span>HR Operations</span>
+              <span>Employee Relations</span>
+              <span>Performance Management</span>
+              <span>Compensation & Benefits</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-card-header">
+              <span class="skill-icon">02</span>
+              <h3>Analytics</h3>
+            </div>
+
+            <div class="skill-list">
+              <span>Microsoft Excel</span>
+              <span>SQL</span>
+              <span>Power BI</span>
+              <span>Data Cleaning</span>
+              <span>Data Visualization</span>
+              <span>Basic Statistics</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-card-header">
+              <span class="skill-icon">03</span>
+              <h3>Technology</h3>
+            </div>
+
+            <div class="skill-list">
+              <span>Python</span>
+              <span>Computer Science</span>
+              <span>Git & GitHub</span>
+              <span>AI Fundamentals</span>
+              <span>MS Office</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-card-header">
+              <span class="skill-icon">04</span>
+              <h3>Professional Skills</h3>
+            </div>
+
+            <div class="skill-list">
+              <span>Communication</span>
+              <span>Problem Solving</span>
+              <span>Team Coordination</span>
+              <span>Attention to Detail</span>
+              <span>Stakeholder Handling</span>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="certifications section" id="certifications">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">06 / CERTIFICATIONS</span>
+
+          <h2>
+            Always learning.
+            <span class="accent">Always growing.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="certification-grid">
+
+
+          <article class="certification-card reveal">
+
+            <span class="certification-category">HUMAN RESOURCES</span>
+
+            <h3>Talent Acquisition Certification</h3>
+
+            <p>Reliance Foundation</p>
+
+            <span class="certification-id">
+              RFSA000283680
+            </span>
+
+          </article>
+
+
+          <article class="certification-card reveal">
+
+            <span class="certification-category">BUSINESS ANALYSIS</span>
+
+            <h3>Career Essentials in Business Analysis</h3>
+
+            <p>Microsoft & LinkedIn</p>
+
+            <span class="certification-id">
+              April 2025
+            </span>
+
+          </article>
+
+
+          <article class="certification-card reveal">
+
+            <span class="certification-category">RECRUITMENT</span>
+
+            <h3>Maestro Recruiter</h3>
+
+            <p>Naukri</p>
+
+            <span class="certification-id">
+              ATS · Screening · Tracking
+            </span>
+
+          </article>
+
+
+          <article class="certification-card reveal">
+
+            <span class="certification-category">DATA ANALYTICS</span>
+
+            <h3>Digital Skills: Web Analytics</h3>
+
+            <p>Accenture</p>
+
+            <span class="certification-id">
+              Google & Adobe Analytics
+            </span>
+
+          </article>
+
+
+          <article class="certification-card reveal">
+
+            <span class="certification-category">ARTIFICIAL INTELLIGENCE</span>
+
+            <h3>Oracle Certified Professional</h3>
+
+            <p>Oracle</p>
+
+            <span class="certification-id">
+              LLM Application Development
+            </span>
+
+          </article>
+
+
+          <article class="certification-card reveal">
+
+            <span class="certification-category">ANALYTICS</span>
+
+            <h3>Google Analytics Individual Qualification</h3>
+
+            <p>Coursera</p>
+
+            <span class="certification-id">
+              Google Analytics & Visualization
+            </span>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="achievements section" id="achievements">
+
+      <div class="container">
+
+        <div class="achievement-box reveal">
+
+          <div class="achievement-icon">
+            ✦
+          </div>
+
+          <div class="achievement-content">
+
+            <span class="section-label">
+              ACHIEVEMENT
+            </span>
+
+            <h2>
+              1st Prize —
+              <span class="accent">Business Model Presentation</span>
+            </h2>
+
+            <p>
+              Awarded first prize for presenting an innovative
+              business model titled "Trash to Treasure",
+              focused on converting waste into valuable
+              resources through sustainable recycling.
+            </p>
+
+            <span class="achievement-note">
+              TEAM-BASED PRESENTATION · MBA PROGRAM
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+
+      <div class="container">
+
+        <div class="contact-content reveal">
+
+          <span class="section-label">07 / LET'S CONNECT</span>
+
+          <h2>
+            Let's create
+            <br>
+            something <span class="accent">meaningful.</span>
+          </h2>
+
+          <p>
+            Interested in working together or discussing
+            opportunities in HR and Business Analytics?
+            I'd love to hear from you.
+          </p>
+
+          <a
+            href="mailto:varunabimanyu002@gmail.com"
+            class="btn btn-primary contact-button">
+
+            Say Hello
+            <span>↗</span>
+
+          </a>
+
+        </div>
+
+
+        <div class="contact-footer">
+
+          <div class="footer-logo">
+            VARUN<span>.</span>
+          </div>
+
+          <div class="footer-socials">
+
+            <a
+              href="https://www.linkedin.com/in/varun8702/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <a
+              href="https://github.com/Varun-87"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <a href="mailto:varunabimanyu002@gmail.com">
+              Email ↗
+            </a>
+
+          </div>
+
+          <p>
+            © <span id="currentYear">2026</span>
+            Varun Babu B. All rights reserved.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top">
+
+    ↑
+
+  </button>
+
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
